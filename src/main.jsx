@@ -9,7 +9,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./index.css";
-// import About from "./components/about.jsx";
+import Home from "./components/home.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <h1>Home</h1>,
+        element: <Home />,
       },
       {
         path: "about",
