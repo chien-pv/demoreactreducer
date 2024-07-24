@@ -5,3 +5,9 @@ h1 {
 main {
   min-height: 70vh;
 }
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}

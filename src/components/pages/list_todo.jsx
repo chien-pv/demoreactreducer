@@ -6,11 +6,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useSelector } from "react-redux";
 
-function ListTodo({ todos, handleDelete }) {
-  let datas = todos.map((item, index) => {
-    return <ItemTodo handleDelete={handleDelete} key={index} {...item} />;
-  });
+function ListTodo() {
+  let todos = useSelector((state) => state);
+  let datas = todos.map((item) => <ItemTodo key={item.id} {...item} />);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
