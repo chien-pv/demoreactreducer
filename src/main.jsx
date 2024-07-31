@@ -2,7 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Admin from "./components/admin.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  redirect,
+} from "react-router-dom";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -10,6 +14,24 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./index.css";
 import Home from "./components/home.jsx";
+import Login from "./components/login.jsx";
+function checkLogin() {
+  let access_token = localStorage.getItem("access_token");
+  if (access_token) {
+    return redirect("/");
+  } else {
+    return null;
+  }
+}
+
+function checkLoginHome() {
+  let access_token = localStorage.getItem("access_token");
+  if (access_token) {
+    return null;
+  } else {
+    return redirect("/login");
+  }
+}
 
 const routes = createBrowserRouter([
   {
@@ -18,6 +40,7 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "",
+        loader: checkLoginHome,
         element: <Home />,
       },
       {
@@ -27,6 +50,11 @@ const routes = createBrowserRouter([
       {
         path: "contact",
         element: <h1>contact</h1>,
+      },
+      {
+        path: "login",
+        loader: checkLogin,
+        element: <Login />,
       },
     ],
   },
