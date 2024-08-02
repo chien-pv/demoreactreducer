@@ -35,7 +35,7 @@ function checkLoginHome() {
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: "/reactASM",
     element: <App />,
     children: [
       {
@@ -59,7 +59,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "/admin",
+    path: "reactASM/admin",
     element: <Admin />,
     children: [
       {
