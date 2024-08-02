@@ -40,7 +40,6 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "",
-        loader: checkLoginHome,
         element: <Home />,
       },
       {
@@ -53,7 +52,6 @@ const routes = createBrowserRouter([
       },
       {
         path: "login",
-        loader: checkLogin,
         element: <Login />,
       },
     ],
