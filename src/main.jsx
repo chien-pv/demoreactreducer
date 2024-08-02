@@ -18,7 +18,7 @@ import Login from "./components/login.jsx";
 function checkLogin() {
   let access_token = localStorage.getItem("access_token");
   if (access_token) {
-    return redirect("/");
+    return redirect("/reactASM");
   } else {
     return null;
   }
