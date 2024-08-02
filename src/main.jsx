@@ -29,7 +29,7 @@ function checkLoginHome() {
   if (access_token) {
     return null;
   } else {
-    return redirect("/login");
+    return redirect("/reactASM/login");
   }
 }
 
